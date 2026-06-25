@@ -1,7 +1,9 @@
 // Implementar login
 
 const contenedorErrores = document.getElementById("errores");
-const btnIngresar = document.getElementById("btnIngresar").addEventListener("click", () => {
+const btnIngresar = document.getElementById("btnIngresar");
+
+btnIngresar.addEventListener("click", () => {
 
     contenedorErrores.innerHTML = ``;
     const usuario = document.getElementById("usuario").value.trim();
@@ -21,7 +23,7 @@ const btnIngresar = document.getElementById("btnIngresar").addEventListener("cli
 
 
     if (usuario === "javier.jaramillo" && password === "JS2026JJ05") {
-        const sesionUsuario = {usuario, password};
+        const sesionUsuario = { usuario, password };
         localStorage.setItem("sesionUsuario", JSON.stringify(sesionUsuario))
         window.location.href = "formulario.html"
     }
