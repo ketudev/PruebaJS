@@ -6,9 +6,11 @@ const btnIngresar = document.getElementById("btnIngresar");
 btnIngresar.addEventListener("click", () => {
 
     contenedorErrores.innerHTML = ``;
-    const usuario = document.getElementById("usuario").value.trim();
-    const password = document.getElementById("password").value.trim();
-
+    let usuario = document.getElementById("usuario").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let mensaje = document.getElementById("mensaje")
+    const usuarioCorrecto = "javier.jaramillo";
+    const passwordCorrecta = "JS2026JJ05";
     let errores = [];
 
 
@@ -22,10 +24,16 @@ btnIngresar.addEventListener("click", () => {
     }
 
 
-    if (usuario === "javier.jaramillo" && password === "JS2026JJ05") {
+    if (usuario === usuarioCorrecto && password === passwordCorrecta) {
+        mensaje.textContent = "Acceso permitido, se te redireccionará en 3 segundos";
+        mensaje.style.color = "green";
         const sesionUsuario = { usuario, password };
         localStorage.setItem("sesionUsuario", JSON.stringify(sesionUsuario))
-        window.location.href = "formulario.html"
+
+        setTimeout(function(){
+            window.location.href = "formulario.html"
+        },3000);
+        
     }
 
     else {
@@ -43,4 +51,6 @@ btnIngresar.addEventListener("click", () => {
 
         return;
     }
+
+    
 });

@@ -20,7 +20,7 @@
             <hr>
             <form id="formulario">
                 <label for="nombre">Nombre del paciente</label>
-                <input type="text" id="nombre">
+                <input type="text" id="nombre" maxlength="60">
                 <label for="edad">Edad</label>
                 <input type="number" id="edad">
                 <label for="especialidad">Especialidad</label>
@@ -37,8 +37,9 @@
                 <label for="hora">Hora</label>
                 <input type="time" id="hora">
                 <label for="motivo">Motivo de la consulta</label>
-                <textarea id="motivo" rows="4"></textarea>
+                <textarea id="motivo" rows="4" maxlength="500"></textarea>
                 <div id="errores"></div>
+                <p id="mensaje"></p>
                 <button type="button" id="btnGuardar">Guardar</button>
             </form>
         </section>
