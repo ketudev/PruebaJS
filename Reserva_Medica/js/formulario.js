@@ -73,7 +73,7 @@ btnGuardar.addEventListener("click", () => {
             hora,
             motivo
         };
-        mensaje.textContent = "Espere mientras agendamos su consulta..."
+        mensaje.textContent = "Agenda exitosa - Espere mientras registramos su hora..."
         mensaje.style.color = "Blue"
         localStorage.setItem(
             "horaMedica",
